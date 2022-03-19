@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="mule-project-1Flow" doc:id="e4eb9d26-3c62-4942-8717-556fb7b1b5e5" >
+		<scheduler doc:name="Scheduler" doc:id="a0e09214-0552-4caf-a452-6c615cacfdfb" >
+			<scheduling-strategy >
+				<fixed-frequency frequency="10" timeUnit="MINUTES"/>
+			</scheduling-strategy>
+		</scheduler>
+		<logger level="INFO" doc:name="Logger" doc:id="bfe9e988-05f7-4669-833b-c634a8541593" message="Will wait 10 more mini"/>
+	</flow>
+</mule>
