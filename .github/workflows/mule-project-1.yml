@@ -1,5 +1,5 @@
 # This is a basic mule workflow 
-name: Mule Maven Multirepo Cloudhub Deployment
+name: Mule Project 1 - WF
 
 #Creating global environment variables
 env:
