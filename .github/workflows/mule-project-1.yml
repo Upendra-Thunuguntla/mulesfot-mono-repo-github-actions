@@ -17,11 +17,9 @@ on:
   # Triggers the workflow on push or pull request events for the given branches
   push:
     branches: [ main , test , dev ]
-    branches-ignore: [ feature ]
     paths: mule-project-1/**
   pull_request:
     branches: [ main , test , dev ]
-    branches-ignore: [ feature ]
     paths: mule-project-1/**
     types: [ closed ]
     
