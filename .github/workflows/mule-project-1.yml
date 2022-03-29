@@ -21,7 +21,7 @@ on:
   pull_request:
     branches: [ main , test , dev ]
     paths: mule-project-1/**
-    types: [ closed ]
+#     types: [ closed ]
     
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
