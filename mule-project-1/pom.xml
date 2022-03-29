@@ -6,7 +6,7 @@
 
 	<groupId>60db91c2-1fd7-45d0-8d6d-4575e7427eb7</groupId>
 	<artifactId>mule-project-1</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<packaging>mule-application</packaging>
 	<name>mule-project-1</name>
 
