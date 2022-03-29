@@ -112,7 +112,7 @@ jobs:
         run: |
           cd $projectname
           artifactName=$(ls *.jar | head -1)
-          mvn test deploy -DmuleDeploy -Dmule.artifact=$artifactName -s "../.mvn/settings.xml" -Dapplication_name=$application_name -Dusername=$username -Dpassword=$password
+          mvn test deploy -DmuleDeploy -Dmule.artifact=$artifactName -s "../.mvn/settings.xml" -Dapplication_name=$application_name -Dpassword=$password
   
   test-build-deploy:
     # The type of runner that the job will run on
