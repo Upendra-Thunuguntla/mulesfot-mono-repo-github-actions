@@ -64,7 +64,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
             name: artifacts
-            path: $projectname/target/*.jar
+            path: ${{ env.projectname }}/target/*.jar
             
   development-build-deploy:
     # The type of runner that the job will run on
