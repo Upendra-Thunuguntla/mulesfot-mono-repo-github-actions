@@ -15,12 +15,12 @@ env:
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events for the given branches
-#   push:
-#     branches: [ main , test , dev ]
-#     paths: mule-project-1/**
-  pull_request:
+  push:
     branches: [ main , test , dev ]
     paths: mule-project-1/**
+#   pull_request:
+#     branches: [ main , test , dev ]
+#     paths: mule-project-1/**
 #     types: [ closed ]
     
   # Allows you to run this workflow manually from the Actions tab
@@ -52,7 +52,7 @@ jobs:
       - name: Build with Maven
         run: |
           cd $projectname
-          mvn clean -B package -s **/.mvn/settings.xml
+          mvn clean -B package -s "../.mvn/settings.xml"
       - name: Stamp artifact file name with commit hash
         run: |
           cd $projectname
@@ -110,7 +110,8 @@ jobs:
       - name: Execute Mule Deploy
         run: |
           cd $projectname
-          mvn test package deploy -DskipMunitTests -DmuleDeploy -Dapplication_name=$application_name -Dusername=$username -Dpassword=$password
+          artifactName=$(ls *.jar | head -1)
+          mvn test deploy -DmuleDeploy -Dmule.artifact=$artifactName -s "../.mvn/settings.xml" -Dapplication_name=$application_name -Dusername=$username -Dpassword=$password
   
   test-build-deploy:
     # The type of runner that the job will run on
