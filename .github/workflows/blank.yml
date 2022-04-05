@@ -5,7 +5,7 @@ name: CI
 env:
   projectname: mule-project-1
   application_name: mule-project-1
-  pompath: mule-project-1/pom.xml
+
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the feature branch
@@ -24,6 +24,8 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    env:
+      pompath: $projectname/pom.xml
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
