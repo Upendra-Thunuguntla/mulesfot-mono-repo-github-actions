@@ -5,7 +5,7 @@ name: CI
 env:
   projectname: mule-project-1
   application_name: mule-project-1
-  pompath: mule-project-1/pom.xml
+  #pompath: mule-project-1/pom.xml
 
 # Controls when the workflow will run
 on:
@@ -29,7 +29,7 @@ jobs:
     steps:
 
       - name: Set Pom Path
-        run: echo "POM_PATH=$(echo $projectname)/pom" >> $GITHUB_ENV
+        run: echo "POM_PATH=$(echo $projectname)/pom.xml" >> $GITHUB_ENV
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: Checking Cache
