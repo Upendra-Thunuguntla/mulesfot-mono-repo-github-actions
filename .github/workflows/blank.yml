@@ -29,7 +29,7 @@ jobs:
     steps:
 
       - name: Set Pom Path
-        run: echo "POM_PATH=$(echo $projectname)/pom.xml" >> $GITHUB_ENV
+        run: echo "pompath=$(echo $projectname)/pom.xml" >> $GITHUB_ENV
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: Checking Cache
