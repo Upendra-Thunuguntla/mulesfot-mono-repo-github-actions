@@ -32,7 +32,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles($pompath) }}
+          key: ${{ runner.os }}-maven-${{ hashFiles(env.pompath) }}
           restore-keys: |
             ${{ runner.os }}-maven-
       # Runs a single command using the runners shell
