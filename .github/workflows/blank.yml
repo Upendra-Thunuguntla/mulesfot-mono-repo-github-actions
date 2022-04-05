@@ -7,8 +7,6 @@ env:
   application_name: mule-project-1
   pompath: mule-project-1/pom.xml
 
-cahce:
-  pompath: ${{ env.projectname }}/pom.xml
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the feature branch
@@ -29,6 +27,10 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+
+      -name: Set Pom Path
+       run: |
+        echo "POM_PATH=$(echo $projectname)/pom" >> $GITHUB_ENV
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: Checking Cache
