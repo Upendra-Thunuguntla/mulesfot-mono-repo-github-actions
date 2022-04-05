@@ -5,7 +5,7 @@ name: CI
 env:
   projectname: mule-project-1
   application_name: mule-project-1
-  pompath: mule-project-1
+  pompath: mule-project-1/pom.xml
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the feature branch
@@ -32,7 +32,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('mule-project-1/pom.xml') }}
+          key: ${{ runner.os }}-maven-${{ hashFiles($pompath) }}
           restore-keys: |
             ${{ runner.os }}-maven-
       # Runs a single command using the runners shell
