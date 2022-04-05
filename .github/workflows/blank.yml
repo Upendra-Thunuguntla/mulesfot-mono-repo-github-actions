@@ -6,6 +6,9 @@ env:
   projectname: mule-project-1
   application_name: mule-project-1
   pompath: mule-project-1/pom.xml
+
+cahce:
+  pompath: ${{ env.projectname }}/pom.xml
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the feature branch
