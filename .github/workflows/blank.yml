@@ -4,8 +4,7 @@ name: CI
 #Creating global environment variables
 env:
   projectname: mule-project-1
-  application_name: mule-project-1
-  #pompath: mule-project-1/pom.xml
+  app_name: mule-project-1
 
 # Controls when the workflow will run
 on:
@@ -30,6 +29,10 @@ jobs:
 
       - name: Set Pom Path
         run: echo "pompath=$(echo $projectname)/pom.xml" >> $GITHUB_ENV
+
+      - name: Set application name
+        run: echo "application_name=$(echo $app_name)-$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_ENV
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       - name: Checking Cache
